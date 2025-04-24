@@ -88,7 +88,7 @@ const init = () => {
 
   animateElement('.replay', {
     duration: 600,
-    delay: 5500,
+    delay: 7500,
     scale: { 0.4: 1 },
     opacity: { 0: 1 },
     easing: 'sin.out',

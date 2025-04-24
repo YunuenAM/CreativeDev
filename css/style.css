@@ -70,8 +70,8 @@ body {
   
   .headline1 {
     top: 10px;
-    left: 100px;
-    width: 450px;
+    left: 65px;
+    width: 700px;
     height: 700px;
     z-index: 2;
   }
@@ -79,7 +79,7 @@ body {
   .headline2 {
     top: 100px;
     left: 60px;
-    width: 400px;
+    width: 600px;
     height: 600px;
   }
   
