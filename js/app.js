@@ -36,24 +36,34 @@ const init = () => {
 
   animateElement('.logo', {
     duration: 600,
-    delay: 1500,
+    delay: 4600,
     opacity: { 0: 1 },
-    scale: { 0.5: 1 },
+    scale: { 0.2: 1 },
     easing: 'elastic.out',
+  });
+
+  animateElement('.female', {
+    duration: 700,
+    delay: 200,
+    scale: { 0.5: 1 },
+    opacity: { 0: 1 },
+    easing: 'back.out',
   });
 
   animateElement('.headline1', {
     duration: 600,
-    delay: 500,
-    x: { '-100': 0 },
+    delay: 3100,
+    x: { '-100%': 0 },
+    scale: { 0.5: 1 },
     opacity: { 0: 1 },
     easing: 'sin.out',
   });
 
   animateElement('.headline2', {
     duration: 600,
-    delay: 1000,
+    delay: 4000,
     x: { '-100': 0 },
+    scale: { 0.2: 1 },
     opacity: { 0: 1 },
     easing: 'sin.out',
   });
@@ -66,28 +76,22 @@ const init = () => {
     easing: 'sin.out',
   });
 
-  animateElement('.female', {
-    duration: 700,
-    delay: 200,
-    scale: { 0.5: 1 },
-    opacity: { 0: 1 },
-    easing: 'back.out',
-  });
+  
 
   animateElement('.button', {
     duration: 600,
-    delay: 2000,
-    scale: { 0.5: 1 },
+    delay: 4000,
+    scale: { 0.2: 1 },
     opacity: { 0: 1 },
     easing: 'elastic.out',
   });
 
   animateElement('.replay', {
     duration: 600,
-    delay: 2500,
-    scale: { 0.5: 1 },
+    delay: 5500,
+    scale: { 0.2: 1 },
     opacity: { 0: 1 },
-    easing: 'elastic.out',
+    easing: 'sin.out',
   });
 };
 
@@ -95,10 +99,30 @@ window.restartAnimation = () => {
   document.querySelectorAll('.banner img').forEach(img => {
     if (!img.classList.contains('background')) {
       img.style.opacity = '0';
-      img.style.transform = 'scale(0.8) translateX(-50px)';
+      img.style.transform = 'scale(0.2) translateX(-50px)';
     }
   });
   setTimeout(init, 100);
 };
 
+function hideElements() {
+    animateElement('.female', {
+      duration: 500,
+      delay: 1800,
+      opacity: { 1: 0 },
+      scale: { 1: 0.5 },
+      easing: 'sin.in',
+    });
+  
+    animateElement('.headline1', {
+      duration: 500,
+      delay: 1800,
+      opacity: { 1: 0 },
+      scale: { 1: 0.5 },
+      x: { 0: '-100' },
+      easing: 'sin.in',
+    });
+  }
+  
+  setTimeout(hideElements, 1500);
 document.addEventListener('DOMContentLoaded', preload);
