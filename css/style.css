@@ -84,9 +84,10 @@ body {
   }
   
   .subheadline {
-    top: 270px;
-    left: 60px;
-    width: 300px;
+   top: 300px;
+    left: 80px;
+    width: 280px;
+    height: 280px;
   }
   
   .female {
@@ -98,10 +99,10 @@ body {
   }
   
   .button {
-    bottom: 100px;
+    top: 100px;
     left: 60px;
-    width: 800px;
-    height: 550px;
+    width: 650px;
+    height: 650px;
     cursor: pointer;
   }
   
