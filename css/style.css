@@ -37,8 +37,8 @@ body {
 }
 .banner {
     position: relative;
-    width: 1200px;
-    height: 400px;
+    width: 768px;
+    height: 768px;
     overflow: hidden;
     background-image: url('./img/background.png');
   }
@@ -82,6 +82,15 @@ body {
     z-index: 3;
     animation: slideInRight 1s ease forwards 1s;
   }
+
+  
+  .subheadline {
+    top: 50px;
+    left: 150px;
+    z-index: 3;
+    animation: slideInRight 1s ease forwards 1s;
+  }
+
 
   .female {
     bottom: 0;
