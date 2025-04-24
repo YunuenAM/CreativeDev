@@ -62,22 +62,25 @@ body {
   }
   
   .logo {
-    top: 40px;
-    left: 40px;
-    width: 150px;
+    top: 250px;
+    left: 60px;
+    width: 600px;
+    height: 475px;
   }
   
   .headline1 {
-    top: -35px;
+    top: 10px;
     left: 100px;
-    width: 400px;
+    width: 450px;
+    height: 700px;
     z-index: 2;
   }
   
   .headline2 {
-    top: 200px;
+    top: 100px;
     left: 60px;
     width: 400px;
+    height: 600px;
   }
   
   .subheadline {
@@ -97,7 +100,8 @@ body {
   .button {
     bottom: 100px;
     left: 60px;
-    width: 180px;
+    width: 800px;
+    height: 550px;
     cursor: pointer;
   }
   

@@ -36,7 +36,7 @@ const init = () => {
 
   animateElement('.logo', {
     duration: 600,
-    delay: 4600,
+    delay: 7000,
     opacity: { 0: 1 },
     scale: { 0.2: 1 },
     easing: 'elastic.out',
@@ -62,7 +62,7 @@ const init = () => {
   animateElement('.headline2', {
     duration: 600,
     delay: 4000,
-    x: { '-100': 0 },
+    x: { '-100%': 0 },
     scale: { 0.2: 1 },
     opacity: { 0: 1 },
     easing: 'sin.out',
@@ -70,7 +70,7 @@ const init = () => {
 
   animateElement('.subheadline', {
     duration: 600,
-    delay: 1200,
+    delay: 4500,
     x: { '-100': 0 },
     opacity: { 0: 1 },
     easing: 'sin.out',
@@ -80,7 +80,7 @@ const init = () => {
 
   animateElement('.button', {
     duration: 600,
-    delay: 4000,
+    delay: 5000,
     scale: { 0.2: 1 },
     opacity: { 0: 1 },
     easing: 'elastic.out',
