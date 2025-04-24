@@ -25,7 +25,7 @@ const preload = () => {
 
 const animateElement = (selector, options = {}) => {
   const el = document.querySelector(selector);
-  new mojs.Html({
+  return new mojs.Html({
     el,
     ...options,
   }).play();
@@ -33,14 +33,6 @@ const animateElement = (selector, options = {}) => {
 
 const init = () => {
   document.getElementById('main').style.visibility = 'visible';
-
-  animateElement('.logo', {
-    duration: 600,
-    delay: 7000,
-    opacity: { 0: 1 },
-    scale: { 0.2: 1 },
-    easing: 'elastic.out',
-  });
 
   animateElement('.female', {
     duration: 700,
@@ -52,93 +44,89 @@ const init = () => {
 
   animateElement('.headline1', {
     duration: 600,
-    delay: 3100,
+    delay: 200,
     x: { '-100%': 0 },
     scale: { 0.5: 1 },
     opacity: { 0: 1 },
     easing: 'sin.out',
   });
 
-  animateElement('.headline2', {
-    duration: 600,
-    delay: 4000,
-    x: { '-100%': 0 },
-    scale: { 0.2: 1 },
-    opacity: { 0: 1 },
-    easing: 'sin.out',
-  });
+  setTimeout(() => {
+    animateElement('.female', {
+      duration: 500,
+      opacity: { 1: 0 },
+      scale: { 1: 0.5 },
+      easing: 'sin.in',
+    });
 
-  animateElement('.subheadline', {
-    duration: 600,
-    delay: 4500,
-    x: { '-100': 0 },
-    opacity: { 0: 1 },
-    easing: 'sin.out',
-  });
+    animateElement('.headline1', {
+      duration: 500,
+      opacity: { 1: 0 },
+      scale: { 1: 0.5 },
+      x: { 0: '-100' },
+      easing: 'sin.in',
+    });
 
-  animateElement('.button', {
-    duration: 600,
-    delay: 6000,
-    scale: { 0.2: 1 },
-    opacity: { 0: 1 },
-    easing: 'elastic.out',
-  });
+    // Tercera fase: Aparecen headline2, logo y subheadline en secuencia
+    setTimeout(() => {
+      animateElement('.headline2', {
+        duration: 600,
+        x: { '-100%': 0 },
+        scale: { 0.2: 1 },
+        opacity: { 0: 1 },
+        easing: 'sin.out',
+      });
 
-  animateElement('.replay', {
-    duration: 600,
-    delay: 7500,
-    scale: { 0.4: 1 },
-    opacity: { 0: 1 },
-    easing: 'sin.out',
-  });
+      setTimeout(() => {
+        animateElement('.logo', {
+          duration: 600,
+          opacity: { 0: 1 },
+          scale: { 0.2: 1 },
+          easing: 'elastic.out',
+        });
+
+        setTimeout(() => {
+          animateElement('.subheadline', {
+            duration: 600,
+            x: { '-100': 0 },
+            opacity: { 0: 1 },
+            easing: 'sin.out',
+          });
+
+          // Cuarta fase: Aparecen button y replay
+          setTimeout(() => {
+            animateElement('.button', {
+              duration: 600,
+              scale: { 0.2: 1 },
+              opacity: { 0: 1 },
+              easing: 'elastic.out',
+            });
+
+            animateElement('.replay', {
+              duration: 600,
+              scale: { 0.4: 1 },
+              opacity: { 0: 1 },
+              easing: 'sin.out',
+            });
+          }, 1000);
+        }, 800);
+      }, 800);
+    }, 500);
+  }, 3000);
 };
 
-let hideTimeout;
-
 window.restartAnimation = () => {
- 
-  clearTimeout(hideTimeout);
-
- 
   document.querySelectorAll('.banner img').forEach(img => {
     if (!img.classList.contains('background')) {
       img.style.opacity = '0';
-      img.style.transform = 'scale(0.2) translateX(-50px)';
+      img.style.transform = 'scale(0.8) translateX(-50px)';
     }
   });
 
-
-  document.getElementById('main').style.visibility = 'hidden';
-
- 
   loadedImage = 0;
-
- 
-  setTimeout(() => {
-    preload();
-  }, 300); 
+  
+  preload();
 };
-
-function hideElements() {
-  animateElement('.female', {
-    duration: 500,
-    delay: 1800,
-    opacity: { 1: 0 },
-    scale: { 1: 0.5 },
-    easing: 'sin.in',
-  });
-
-  animateElement('.headline1', {
-    duration: 500,
-    delay: 1800,
-    opacity: { 1: 0 },
-    scale: { 1: 0.5 },
-    x: { 0: '-100' },
-    easing: 'sin.in',
-  });
-}
-
-setTimeout(hideElements, 1500);
 
 document.addEventListener('DOMContentLoaded', () => {
   preload();
