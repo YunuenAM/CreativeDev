@@ -89,7 +89,7 @@ const init = () => {
   animateElement('.replay', {
     duration: 600,
     delay: 5500,
-    scale: { 0.2: 1 },
+    scale: { 0.4: 1 },
     opacity: { 0: 1 },
     easing: 'sin.out',
   });

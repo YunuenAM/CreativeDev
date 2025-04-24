@@ -99,7 +99,7 @@ body {
   }
   
   .button {
-    top: 100px;
+    top: 100px; 
     left: 60px;
     width: 650px;
     height: 650px;
@@ -107,9 +107,10 @@ body {
   }
   
   .replay {
-    top: 10px;
-    left: 60px;
-    width: 400px;
+    top: 100px;
+    left: 100px;
+    width: 500px;
+    height: auto;
     cursor: pointer;
   }
   
