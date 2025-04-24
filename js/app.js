@@ -67,7 +67,7 @@ const init = () => {
       easing: 'sin.in',
     });
 
-    // Tercera fase: Aparecen headline2, logo y subheadline en secuencia
+    // Tercera fase: Aparecen headline2, button y subheadline en secuencia
     setTimeout(() => {
       animateElement('.headline2', {
         duration: 600,
@@ -76,15 +76,15 @@ const init = () => {
         opacity: { 0: 1 },
         easing: 'sin.out',
       });
-
       setTimeout(() => {
-        animateElement('.logo', {
+        animateElement('.button', {
           duration: 600,
-          opacity: { 0: 1 },
           scale: { 0.2: 1 },
+          opacity: { 0: 1 },
           easing: 'elastic.out',
         });
 
+      
         setTimeout(() => {
           animateElement('.subheadline', {
             duration: 600,
@@ -93,21 +93,26 @@ const init = () => {
             easing: 'sin.out',
           });
 
-          // Cuarta fase: Aparecen button y replay
+          // Cuarta fase: Aparecen logo 
           setTimeout(() => {
-            animateElement('.button', {
+            animateElement('.logo', {
               duration: 600,
-              scale: { 0.2: 1 },
               opacity: { 0: 1 },
+              scale: { 0.2: 1 },
               easing: 'elastic.out',
             });
-
-            animateElement('.replay', {
-              duration: 600,
-              scale: { 0.4: 1 },
-              opacity: { 0: 1 },
-              easing: 'sin.out',
-            });
+    
+            
+             // Quinta fase: Aparece el replay
+            setTimeout (() => {
+                animateElement('.replay', {
+                    duration: 900,
+                    scale: { 0.4: 1 },
+                    opacity: { 0: 1 },
+                    easing: 'sin.out',
+                  });
+            })
+            
           }, 1000);
         }, 800);
       }, 800);

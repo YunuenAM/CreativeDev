@@ -84,10 +84,10 @@ body {
   }
   
   .subheadline {
-   top: 300px;
+    top: 250px;
     left: 80px;
-    width: 280px;
-    height: 280px;
+    width: 375px;
+    height: 375px;
   }
   
   .female {
