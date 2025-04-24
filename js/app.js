@@ -1,5 +1,5 @@
 let images,
-    loadedImage = 0;
+  loadedImage = 0;
 
 const preload = () => {
   images = [
@@ -10,7 +10,7 @@ const preload = () => {
     './assets/female.png',
     './assets/button.png',
     './assets/subheadline.png',
-    './assets/replay.png'
+    './assets/replay.png',
   ];
 
   images.forEach((src, i) => {
@@ -76,8 +76,6 @@ const init = () => {
     easing: 'sin.out',
   });
 
-  
-
   animateElement('.button', {
     duration: 600,
     delay: 6000,
@@ -95,34 +93,57 @@ const init = () => {
   });
 };
 
+let hideTimeout;
+
 window.restartAnimation = () => {
+ 
+  clearTimeout(hideTimeout);
+
+ 
   document.querySelectorAll('.banner img').forEach(img => {
     if (!img.classList.contains('background')) {
       img.style.opacity = '0';
       img.style.transform = 'scale(0.2) translateX(-50px)';
     }
   });
-  setTimeout(init, 100);
+
+
+  document.getElementById('main').style.visibility = 'hidden';
+
+ 
+  loadedImage = 0;
+
+ 
+  setTimeout(() => {
+    preload();
+  }, 300); 
 };
 
 function hideElements() {
-    animateElement('.female', {
-      duration: 500,
-      delay: 1800,
-      opacity: { 1: 0 },
-      scale: { 1: 0.5 },
-      easing: 'sin.in',
-    });
-  
-    animateElement('.headline1', {
-      duration: 500,
-      delay: 1800,
-      opacity: { 1: 0 },
-      scale: { 1: 0.5 },
-      x: { 0: '-100' },
-      easing: 'sin.in',
-    });
-  }
-  
-  setTimeout(hideElements, 1500);
-document.addEventListener('DOMContentLoaded', preload);
+  animateElement('.female', {
+    duration: 500,
+    delay: 1800,
+    opacity: { 1: 0 },
+    scale: { 1: 0.5 },
+    easing: 'sin.in',
+  });
+
+  animateElement('.headline1', {
+    duration: 500,
+    delay: 1800,
+    opacity: { 1: 0 },
+    scale: { 1: 0.5 },
+    x: { 0: '-100' },
+    easing: 'sin.in',
+  });
+}
+
+setTimeout(hideElements, 1500);
+
+document.addEventListener('DOMContentLoaded', () => {
+  preload();
+
+  document.querySelector('.replay').addEventListener('click', () => {
+    window.restartAnimation();
+  });
+});

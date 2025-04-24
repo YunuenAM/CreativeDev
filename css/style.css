@@ -112,5 +112,6 @@ body {
     width: 500px;
     height: auto;
     cursor: pointer;
+    z-index: 10;
   }
   
